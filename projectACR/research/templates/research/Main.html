@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,7 +8,7 @@
     <title>Anime Power Ranking</title>
 
         <!-- 부트스트랩 -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="{% static 'research/css/bootstrap.min.css' %}" rel="stylesheet">
 
         <!-- IE8 에서 HTML5 요소와 미디어 쿼리를 위한 HTML5 shim 와 Respond.js -->
         <!-- WARNING: Respond.js 는 당신이 file:// 을 통해 페이지를 볼 때는 동작하지 않습니다. -->
@@ -46,13 +47,13 @@
             <p> 이 페이지는 <strong>J-anime</strong> 캐릭터의 순위를 매기기 위해 만들어졌습니다.</p>
             <!--<p> Character's ranking will be changed by <strong>ELO Rating system</strong></p>-->
             <p> <strong>ELO 등급 시스템</strong>에 따라 캐릭터 순위가 변경됩니다.</p>
-            <p><a class="btn btn-primary btn-lg" role="button" href="Vote.html">Go to Vote</a></p>
+            <p><a class="btn btn-primary btn-lg" role="button" href="../vote">Go to Vote</a></p>
         </div>
     
 
         <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
-        <script src="js/bootstrap.min.js"></script>
+        <script src="{% static 'research/js/bootstrap.min.js' %}"></script>
   </body>
 </html>
