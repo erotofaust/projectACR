@@ -1,4 +1,5 @@
 {% load static %}
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,29 +17,9 @@
           <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-    <script> 
-        function clickfirst()
-        {
-            alert("승자는 "+name_first)
-            location.reload();
-        }
-
-        function clicksecond()
-        {
-            alert("승자는 "+name_second)
-            location.reload();
-        }
-        
-        var nameArray = new Array("goku", "gundam", "luffy", "pikachu", "gaogaigar");
-        function randomItem(a) 
-        {
-            return a[Math.floor(Math.random() * a.length)];
-        }
-        var name_first = randomItem(nameArray);
-        var name_second = randomItem(nameArray);
-    </script>
   </head>
   <body>
+
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -65,18 +46,22 @@
         <h1 align="center">Click to Winner</h1>
         <table align="center">
             <tr>
-                <td><input type="image" id=first_button onclick='clickfirst()' src= "{% static 'research/goku.jpg' %}" width="300" height="300"></td>                   
-                <td><input type="image" id=second_button onclick='clicksecond()' src= "{% static 'research/goku.jpg' %}" width="300" height="300"></td>   
+                <td><input type="image" id=first_button src="{% static 'research/goku.jpg' %}" width="300" height="300"></td>                   
+                <td><input type="image" id=second_button src= "{% static 'research/goku.jpg' %}" width="300" height="300"></td>   
             </tr>
             <tr>
-                <td align="center"><script>document.write(name_first)</script></td>
-                <td align="center"><script>document.write(name_second)</script></td>
+                <td align="center"><p id=first_name_text>""</p></td>
+                <td align="center"><p id=second_name_text>""</p></td>
             </tr>
         </table>
-
+        
         <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
         <script src="{% static 'research/js/bootstrap.min.js' %}"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <!-- JQuery -->
+        <script src="{% static 'research/js/JavaFunction.js' %}"></script>
+        <!-- 내가 작성한 스크립트 -->
     </body>
 </html>
