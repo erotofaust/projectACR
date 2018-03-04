@@ -13,9 +13,9 @@ $('#first_button').click(function clickButton(){
 });
 
 $('#second_button').click(function clickButton(){
-    alert("승자는 "+name_second, name_first)
+    alert("승자는 "+name_second)
     location.reload();
-    sendPost("test.php", name_second)
+    sendPost("test.php", name_second, name_first)
 });
 
 function clickButton(name)
