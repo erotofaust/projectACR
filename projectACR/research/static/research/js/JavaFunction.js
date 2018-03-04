@@ -9,11 +9,13 @@ $('#second_name_text').text(name_second);
 $('#first_button').click(function clickButton(){
     alert("승자는 "+name_first)
     location.reload();
+    sendPost("test.php", name_first, name_second)
 });
 
 $('#second_button').click(function clickButton(){
-    alert("승자는 "+name_second)
+    alert("승자는 "+name_second, name_first)
     location.reload();
+    sendPost("test.php", name_second)
 });
 
 function clickButton(name)
@@ -27,20 +29,6 @@ function randomItem(a)
     return a[Math.floor(Math.random() * a.length)];
 }
 
-function sendPost()
-{
-    $(document).ready(function(){
-        $("button").click(function(){
-            $.post("demo_test_post.asp",
-            {
-              name: "Donald Duck",
-              city: "Duckburg"
-            },
-            function(data,status){
-                alert("Data: " + data + "\nStatus: " + status);
-            });
-        });
-    });
+function sendPost(url, name_winner, name_loser){
+    $.post(url, {winner: name_winner, loser: name_loser});
 }
-
-
